@@ -3,7 +3,7 @@
     <a href="https://passage.id/" passHref><div class="passageLogo"></div></a>
     <div class="spacer"></div>
     <div class="links">
-      <div v-if="router.currentRoute.path === '/dashboard' && authorized" class="logout" @click.prevent="logout">Logout</div>
+      <div v-if="authorized" class="logout" @click.prevent="logout">Logout</div>
       <a href="https://passage.id/" passHref><div class="home"><span class="text">Go to Passage</span><div class="icon"></div></div></a>
     </div>
   </div>
@@ -30,7 +30,6 @@ export default defineComponent({
     }
 
     return {
-      router,
       logout,
     }
   },
