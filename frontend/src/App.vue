@@ -2,12 +2,53 @@
   <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style>
+body {
+  margin: 0px;
+  height: 100vh;
+  font-family: 'DM Sans';
+  background-color: #F3FDF8;
+}
+
+:root{
+  --passage-body-font-family: "DM Sans";
+  --passage-header-font-family: "DM Sans";
+  --passage-control-border-radius: 75px;
+  --passage-button-border-radius: 75px;
+  --passage-control-border-color: #263768;
+  --passage-body-font-size: 20px;
+  --passage-button-font-size: 24px;
+  --passage-button-font-weight: 400;
+  --passage-header-font-size: 32px;
+  --passage-header-font-weight: 700;
+  --passage-header-text-color: #263768;
+  --passage-button-background-color: #27417E;
+  --passage-button-hover-background-color: #2D68A6;
+  --passage-button-active-background-color: #2D68A6;
+  --passage-button-width: 200px;
+  --passage-container-max-width: 500px;
+}
+
+
+/* for shorter 13" dekstop screens */
+@media screen and (max-height: 845px) {
+
+  :root{
+    --passage-body-font-size: 20px;
+    --passage-button-font-size: 20px;
+    --passage-header-font-size: 28px;
+  }
+}
+
+/* mobile rules begin here */
+
+@media screen and (max-width: 650px){
+  :root{
+    --passage-body-font-size: 16px;
+    --passage-button-font-size: 16px;
+    --passage-header-font-size: 24px;
+    --passage-button-width: auto;
+    --passage-container-max-width: 245px;
+  }
 }
 </style>
