@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout layoutStyle="unauthorized">
     <div class="mainContainer">
       <div class="flexContainer">
         <div class="messageContainer">
@@ -30,17 +30,6 @@ export default defineComponent({
 
 </script>
 <style scoped>
-.bodyClass{
-  background-repeat: no-repeat;
-  background-image: 
-    url('/fingerprint-left-error.svg'), 
-    url('/fingerprint-right-error.svg');
-  background-position: 
-    top 300px left -50%,
-    top 120px right -50%;
-  background-size: 50%;
-}
-
 .mainContainer {
   padding-top: 75px;
   padding-left: 75px;
@@ -124,12 +113,6 @@ export default defineComponent({
 }
 
 @media screen and (max-width: 500px){
-  .bodyClass{
-    background-position: 
-      top 450px left -120px,
-      top 90px right -190px;
-    background-size: 100%;
-  }
   .title {
     font-size: 36px;
     font-weight: 700;

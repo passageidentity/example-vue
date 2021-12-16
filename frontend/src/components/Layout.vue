@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="['fingerprints', layoutStyle]">
     <Banner :authorized="authorized"/>
     <div class="mainContainerSizer">
       <div class="mainContainer">
@@ -22,6 +22,10 @@ export default defineComponent({
     authorized: {
       type: Boolean,
       required: false,
+    },
+    layoutStyle: {
+      type: String,
+      default: '',
     }
   },
 })
@@ -89,4 +93,88 @@ export default defineComponent({
     min-height: 30px;
   }
 }
+
+.fingerprints{
+  background-repeat: no-repeat;
+  background-size: 50%;
+  height: 100vh;
+}
+
+/* home view fingerprints */
+.home{
+  background-image: 
+    url('~@/assets/fingerprint-left-index.svg'), 
+    url('~@/assets/fingerprint-right-index.svg');
+  background-position: 
+    top 160px left -50%,
+    top 300px right -50%;
+}
+
+@media screen and (max-width: 870px) {
+  .home{
+    background-position: 
+      top 110px left -120px,
+      top 300px right -120px;
+    background-size: 70%;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .home{
+    background-position: 
+      top 110px left -120px,
+      top 450px right -120px;
+    background-size: 100%;
+  }
+}
+
+/* authorized fingerprints */
+.authorized{
+  background-image: 
+    url('~@/assets/fingerprint-left-success.svg'), 
+    url('~@/assets/fingerprint-right-success.svg');
+  background-position: 
+    top 130px left -50%,
+    top 300px right -50%;
+}
+
+@media screen and (max-width: 760px){
+  .authorized{
+    background-position: 
+      top 100px left -120px,
+      top 340px right -120px;
+    background-size: 70%;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .authorized{
+    background-position: 
+      top 100px left -140px,
+      top 450px right -120px;
+    background-size: 100%;
+  }
+}
+
+/* unauthorized fingerprints */
+.unauthorized{
+  background-image: 
+    url('~@/assets/fingerprint-left-error.svg'), 
+    url('~@/assets/fingerprint-right-error.svg');
+  background-position: 
+    top 300px left -50%,
+    top 120px right -50%;
+}
+
+@media screen and (max-width: 500px){
+  .unauthorized{
+    background-position: 
+      top 450px left -120px,
+      top 90px right -190px;
+    background-size: 100%;
+  }
+}
+
+
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout layoutStyle="home">
     <div class="mainContainer">
     <div class="earlyAccessContainer">
       <div class="title">Experience the Passage Difference.</div>
@@ -30,38 +30,6 @@ export default defineComponent({
   },
 })
 </script>
-<style>
-body {
-  background-repeat: no-repeat;
-  background-image: 
-    url('~@/assets/fingerprint-left-index.svg'), 
-    url('~@/assets/fingerprint-right-index.svg');
-  background-position: 
-    top 160px left -50%,
-    top 300px right -50%;
-  background-size: 50%;
-}
-
-/* steps to mobile rules begin here */
-@media screen and (max-width: 870px) {
-  body{
-    background-position: 
-      top 110px left -120px,
-      top 300px right -120px;
-    background-size: 70%;
-  }
-}
-
-@media screen and (max-width: 670px) {
-  body{
-    background-position: 
-      top 110px left -120px,
-      top 450px right -120px;
-    background-size: 100%;
-  }
-}
-
-</style>
 <style scoped>
 
 .mainContainer {

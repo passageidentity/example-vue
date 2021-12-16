@@ -1,5 +1,5 @@
 <template>
-  <Layout :authorized="true">
+  <Layout :authorized="true" layoutStyle="authorized">
     <div class="mainContainer">
       <div>
         <div class="title">Welcome!</div>
@@ -33,17 +33,6 @@ export default defineComponent({
 
 </script>
 <style scoped>
-.bodyClass{
-  background-repeat: no-repeat;
-  background-image: 
-    url('/fingerprint-left-success.svg'), 
-    url('/fingerprint-right-success.svg');
-  background-position: 
-    top 130px left -50%,
-    top 300px right -50%;
-  background-size: 50%;
-}
-
 .mainContainer{
   padding-top: 60px;
   padding-left: 75px;
@@ -104,13 +93,6 @@ export default defineComponent({
 
 /* mobile rules begin here */
 @media screen and (max-width: 760px){
-  .bodyClass{
-    background-position: 
-      top 100px left -120px,
-      top 340px right -120px;
-    background-size: 70%;
-  }
-
   .mainContainer{
     padding-top: 45px;
     padding-left: 30px;
@@ -132,20 +114,8 @@ export default defineComponent({
 }
 
 @media screen and (max-width: 450px){
-  .bodyClass{
-    background-position: 
-      top 100px left -140px,
-      top 450px right -120px;
-    background-size: 100%;
-  }    
-  .imgContainer {
+   .imgContainer {
       height: 260px;
-  }
-}
-
-@media screen and (max-height: 765px){
-  .bodyClass{
-    height: calc(100vh + 45px);
   }
 }
 </style>
