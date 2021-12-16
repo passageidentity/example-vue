@@ -7,7 +7,7 @@ module.exports = {
       .tap((options) => ({
         ...options,
         compilerOptions: {
-          // treat any tag that starts with ion- as custom elements
+          // treat any tag that starts with passage- as custom elements
           isCustomElement: (tag) => tag.startsWith('passage-'),
         },
       }))
