@@ -1,34 +1,16 @@
 # Passage Example Vue App
 
-This example application uses the Passage Element in a Vue application to authenticate users using biometrics or magic links. The server uses the 
-[Passage Node.js SDK](https://www.npmjs.com/package/@passageidentity/passage-node) to verify users on authenticated endpoints. To run this example application, follow the instructions below to install and start the 
-frontend and backend server.
+This example application uses the Passage Element in a Vue application to authenticate users using biometrics or magic links. To run this example application, follow the instructions below to install and start the 
+application.
 
 ## Configure Your Environment Variables
 
-1. For both the frontend and backend folders, copy the EXAMPLE.env file to your own .env file.
-2. Replace the example variables with your own Passage App ID and API Key. You can get these from the [Passage Console](https://console.passage.id).
-
-## Building the Server
-
-Navigate to the backend folder and do the following:
-
-Install dependencies
-```bash
-npm install
-```
-
-Start the server in development mode
-```bash
-npm run start
-```
-
-The server will run on http://localhost:7001.
-
+1. Copy the EXAMPLE.env file to your own .env file.
+2. Replace the example variable with your own Passage App ID. You can get these from the [Passage Console](https://console.passage.id).
 
 ## Building the Client
 
-Navigate to the frontend folder and do the following:
+Run the following commands:
 
 Install dependencies
 ```bash
@@ -44,7 +26,7 @@ The client will run on http://localhost:8080, which you can navigate to in your 
 
 ## Authenticate Requests With Passage
 
-Navigate to [http://localhost:8080](http://localhost:8080) and see what it's like authenticating users using Passage with Vue and Express.js!
+Navigate to [http://localhost:8080](http://localhost:8080) and see what it's like authenticating users using Passage with Vue!
 
 # Using Passage with Vue
 
@@ -76,8 +58,13 @@ compilerOptions: {
 ```
 
 ## Getting Authentication Status and User Information
-After the user has logged in with Passage, all requests to your backend need to be authenticated using the JWT provided by Passage. In this example, we set the JWT in an Authorization header to our API server. 
+After the user has logged in with Passage, you can retrieve basic user information from Passage using the PassageUser class exported from `@passageidentity/passage-auth/passage-user`. This example wraps this functionality into a reusable vue composable in [useAuthStatus](https://github.com/passageidentity/example-vue/blob/main/src/composables/useAuthStatus.js):
+```
+import { PassageUser } from '@passageidentity/passage-auth/passage-user'
 
-This project uses a simple [Express](https://expressjs.com/) backend and the [Passage Node.js SDK](https://www.npmjs.com/package/@passageidentity/passage-node) to authenticate requests and retrieve user data for your application. You can see how that runs in the [/backend](https://github.com/passageidentity/example-vue/tree/main/backend) folder of this repository.
-
-This example wraps communication with the backend API in a custom composable in [frontend/src/composables/useAuthStatus.js](https://github.com/passageidentity/example-vue/blob/main/frontend/src/composables/useAuthStatus.js) for re-use in any Vue component.
+export function useAuthStatus(){
+...
+  new PassageUser().userInfo().then(userInfo => {
+...
+```
+Any additional requests to your backend server that require user authorization can use one of the Passage backend [libraries](https://docs.passage.id/backend-libraries/overview) to safely authenticate user tokens.
