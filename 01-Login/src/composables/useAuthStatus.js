@@ -5,7 +5,7 @@ export function useAuthStatus(){
   const isLoading = ref(true)
   const isAuthorized = ref(false)
   const username = ref('')
-  
+
   new PassageUser().userInfo().then(userInfo => {
       if(userInfo === undefined){
           isLoading.value = false
