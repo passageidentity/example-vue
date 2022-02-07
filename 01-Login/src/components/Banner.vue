@@ -28,7 +28,7 @@ export default defineComponent({
 }
   
 .passageLogo {
-  background-image: url('~@/assets/passage-logo.svg');
+  background-image: url('https://storage.googleapis.com/passage-docs/passage-logo.svg');
   background-repeat: no-repeat;
   width: 60px;
   height: 60px;
