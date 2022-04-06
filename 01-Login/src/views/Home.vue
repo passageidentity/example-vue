@@ -3,7 +3,7 @@
 </template>
 <script>
 import { defineComponent } from 'vue'
-import '@passageidentity/passage-auth'
+import '@passageidentity/passage-elements/passage-auth'
 
 export default defineComponent({
   name: 'Home',
