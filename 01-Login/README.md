@@ -31,13 +31,13 @@ Navigate to [http://localhost:8080](http://localhost:8080) and see what it's lik
 # Using Passage with Vue
 
 ## Importing and Using the Passage-Auth Custom Element
-The easiest way to add authentication to a web frontend is with a Passage Auth custom element. First you'll need to install the [passage-auth](https://www.npmjs.com/package/@passageidentity/passage-auth) package from npm:
+The easiest way to add authentication to a web frontend is with a Passage Auth custom element. First you'll need to install the [passage-elements](https://www.npmjs.com/package/@passageidentity/passage-elements) package from npm:
 ```
-npm i --save @passageidentity/passage-auth
+npm i --save @passageidentity/passage-elements
 ```
 Then import the package in the module where you intend to use the custom element
 ```
-import '@passageidentity/passage-auth'
+import '@passageidentity/passage-elements/passage-auth'
 ```
 Importing this script will register the Passage custom element for use in your Vue components. For more information about custom elements refer to the [online documentation](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements).
 
@@ -58,9 +58,9 @@ compilerOptions: {
 ```
 
 ## Getting Authentication Status and User Information
-After the user has logged in with Passage, you can retrieve basic user information from Passage using the PassageUser class exported from `@passageidentity/passage-auth/passage-user`. This example wraps this functionality into a reusable vue composable in [useAuthStatus](https://github.com/passageidentity/example-vue/blob/main/src/composables/useAuthStatus.js):
+After the user has logged in with Passage, you can retrieve basic user information from Passage using the PassageUser class exported from `@passageidentity/passage-elements/passage-user`. This example wraps this functionality into a reusable vue composable in [useAuthStatus](https://github.com/passageidentity/example-vue/blob/main/src/composables/useAuthStatus.js):
 ```
-import { PassageUser } from '@passageidentity/passage-auth/passage-user'
+import { PassageUser } from '@passageidentity/passage-elements/passage-user'
 
 export function useAuthStatus(){
 ...
