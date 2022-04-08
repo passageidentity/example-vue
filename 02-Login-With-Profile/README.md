@@ -1,6 +1,6 @@
 # Passage Example Vue App
 
-This example application uses the Passage Element in a Vue application to authenticate users using biometrics or magic links. To run this example application, follow the instructions below to install and start the 
+This example application uses the Passage Element in a Vue application to authenticate users using biometrics or magic links. It also uses the Passage Profile Element on the dashboard to show off the profile functionality. To run this example application, follow the instructions below to install and start the 
 application.
 
 ## Configure Your Environment Variables
