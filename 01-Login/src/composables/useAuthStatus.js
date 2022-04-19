@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { PassageUser } from '@passageidentity/passage-auth/passage-user'
+import { PassageUser } from '@passageidentity/passage-elements/passage-user'
 
 export function useAuthStatus(){
   const isLoading = ref(true)

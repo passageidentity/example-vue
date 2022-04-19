@@ -18,17 +18,17 @@ export default defineComponent({
   padding: 20px 30px;
   display: flex;
   align-items: center;
-  background-color: #27417E;
+  background-color: #282727;
   color: white;
 }
 
 .header-text {
   font-size: 24px;
-  margin-left: 10px;
+  margin: 0px 10px;
 }
   
 .passageLogo {
-  background-image: url('https://storage.googleapis.com/passage-docs/passage-logo.svg');
+  background-image: url('https://storage.googleapis.com/passage-docs/passage-logo-dark.svg');
   background-repeat: no-repeat;
   width: 60px;
   height: 60px;
