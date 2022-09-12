@@ -19,7 +19,7 @@ npm install
 
 Start the client in development mode
 ```bash
-npm run start
+npm run serve
 ```
 
 The client will run on http://localhost:8080, which you can navigate to in your browser.
